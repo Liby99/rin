@@ -10,8 +10,8 @@ project(Rin)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++14")
 
 # Include GLM (Deprecating)
-# add_subdirectory(lib/glm EXCLUDE_FROM_ALL)
-# include_directories(lib/glm/)
+add_subdirectory(lib/glm EXCLUDE_FROM_ALL)
+include_directories(lib/glm/)
 
 # =========================================================================== #
 
