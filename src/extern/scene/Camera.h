@@ -1,12 +1,13 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <glm/glm.hpp>
+#include "util/Transform.h"
 
 namespace rin {
     class Camera {
-    protected:
-        glm::vec3 pos;
+    public:
+        Transform transform;
+        glm::vec3 dir;
     public:
         Camera();
     };

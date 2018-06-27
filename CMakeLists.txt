@@ -13,6 +13,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++14")
 add_subdirectory(lib/glm EXCLUDE_FROM_ALL)
 include_directories(lib/glm/)
 
+# Include Assimp (Deprecating)
+set(CMAKE_MACOSX_RPATH 1)
+add_subdirectory(lib/assimp EXCLUDE_FROM_ALL)
+include_directories(lib/assimp/include)
+
 # =========================================================================== #
 
 # Generate single header file using the script
@@ -31,6 +36,7 @@ file(
 )
 set(rin ${rin_sources})
 add_library(rin ${rin})
+target_link_libraries(rin glm assimp)
 
 # Compile all the test files
 file(GLOB test_sources test/*.cpp test/*/*.cpp test/*/*/*.cpp)
